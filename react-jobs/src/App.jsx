@@ -11,7 +11,7 @@ import AddJobPage from './pages/AddJobPage';
 const App = () => {
   // Add a new job to the database
   const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
+    const res = await fetch('/api/jobs/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,8 +23,11 @@ const App = () => {
 
   // Delete a job from the database
   const deleteJob = async (id) => {
-    console.log('delete', id);
-  };
+    const res = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE'
+    });
+    return;
+  }
 
   const router = createBrowserRouter(
     createRoutesFromElements(

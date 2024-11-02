@@ -16,7 +16,7 @@ const AddJobPage = ({ addJobSubmit }) => {
 
     const navigate = useNavigate();
 
-    const submitForm = async (e) => {
+    const submitForm = (e) => {
         e.preventDefault();
 
         const newJob = {
